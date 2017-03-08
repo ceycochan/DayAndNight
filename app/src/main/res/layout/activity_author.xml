@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/clockBackground"
@@ -22,7 +21,7 @@
         android:layout_marginTop="10dp"
         android:background="?attr/clockBackground"
         android:gravity="center"
-        android:text="超级帅的Chan(不要脸一下)"
+        android:text="@string/chan"
         android:textColor="?attr/clockTextColor" />
 
 </LinearLayout>

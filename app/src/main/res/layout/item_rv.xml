@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="80dp"
     android:background="?attr/clockBackground"
@@ -28,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="?attr/clockBackground"
-            android:text="唐伯虎点秋香"
+            android:text="@string/tangbohu"
             android:textColor="?attr/clockTextColor"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -39,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="?attr/clockBackground"
-            android:text="瞎几把写代码"
+            android:text="@string/coding"
             android:textColor="?attr/clockTextColor" />
     </LinearLayout>
 </LinearLayout>
