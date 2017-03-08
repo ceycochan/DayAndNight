@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="clockBackground" format="color"/>
+    <attr name="clockTextColor" format="color"/>
+    <!--增加自定义颜色属性 知识-->
+</resources>
