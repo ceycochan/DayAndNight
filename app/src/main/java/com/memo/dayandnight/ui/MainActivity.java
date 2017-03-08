@@ -209,8 +209,11 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         refreshStatusBar();
     }
 
+    /**
+     * 刷新顶部通知栏的颜色
+     */
     private void refreshStatusBar() {
-        if (Build.VERSION.SDK_INT>=21){
+        if (Build.VERSION.SDK_INT >= 21) {   // android 5.0向上
             TypedValue typedValue = new TypedValue();
             Resources.Theme theme = getTheme();
             theme.resolveAttribute(R.attr.colorPrimary, typedValue, true);
@@ -219,15 +222,18 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     }
 
     /**
-     * 模式切换动画
-     *
+     * 模式切换动画  * CoreCoding
      */
-
     private void showAnimation() {
+        //取得当前窗口下的View
         final View decorView = getWindow().getDecorView();
+        //将取得的decorViewq转换成 bitmap (该bitmap可理解为当前屏幕的截图)
         Bitmap cacheBitmap = getCacheBitmapFromView(decorView);
         if (decorView instanceof ViewGroup && cacheBitmap != null) {
             final View view = new View(this);
+            /**
+             * 将拿到的bitmap作用在 DecorView上
+             */
             view.setBackground(new BitmapDrawable(getResources(), cacheBitmap));
             ViewGroup.LayoutParams layoutParam = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
             ((ViewGroup) decorView).addView(view, layoutParam);
@@ -237,7 +243,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
-                    ((ViewGroup) decorView).removeView(view);
+                    ((ViewGroup) decorView).removeView(view);  //动画结束后移除view 减小内存压力
                 }
             });
             objectAnimator.start();
@@ -246,8 +252,9 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
 
     /**
      * 获取某个View的缓存视图
+     * <p>
+     * 类似于截屏业务逻辑
      */
-
     private Bitmap getCacheBitmapFromView(View view) {
         final boolean drawingCacheEnabled = true; //运行后新加final
         view.setDrawingCacheEnabled(drawingCacheEnabled);

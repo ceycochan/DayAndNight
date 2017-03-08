@@ -16,6 +16,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!--以下两项为自定义Color属性,对应的需要在Colors.xml中声明-->
         <item name="clockBackground">@android:color/white</item>
         <item name="clockTextColor">@android:color/black</item>
     </style>
